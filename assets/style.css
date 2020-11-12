@@ -1,0 +1,291 @@
+body, html {
+    margin: 0;
+    padding: 0;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: 'montserrat';
+    overflow-x: hidden;
+    background-color: #e7e7de;
+}
+
+/* navbar */
+nav {
+    display: flex;
+    background-color: #0f3057;
+    justify-content: space-around;
+    height: 70px;
+    color: #e7e7de;
+    align-items: center;
+    position: sticky;
+    top: 0px;
+}
+nav h2 {
+    font-family: 'bangers';
+    letter-spacing: 3px;
+}
+.media {
+    display: flex;
+}
+.media a {
+    color: #e7e7de;
+    padding: 10px;
+}
+nav a:hover {
+    color: #fff;
+}
+nav ul {
+    display: flex;
+    list-style: none;
+    width: 20%;
+    justify-content: space-between;
+}
+nav ul li a {
+    color: #e7e7de;
+    text-decoration: none;
+}
+nav ul li a:hover {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+/* hamburger menu */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    height: 20px;
+    justify-content: space-between;
+    position: relative;
+}
+
+.menu-toggle input {
+    position: absolute;
+    width: 40px;
+    height: 28px;
+    left: -7px;
+    top: -4px;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #e7e7de;
+    border-radius: 5px;
+    transition: all 0.5s;
+}
+
+/* hamburger menu animation */
+.menu-toggle span:nth-child(2) {
+    transform-origin: 0 0;
+}
+
+.menu-toggle span:last-child {
+    transform-origin: 0 100%;
+}
+
+.menu-toggle input:checked ~ span:nth-child(2) {
+    transform: rotate(45deg);
+}
+
+.menu-toggle input:checked ~ span:last-child {
+    transform: rotate(-45deg);
+}
+
+.menu-toggle input:checked ~ span:nth-child(3) {
+    transform: scale(0);
+}
+
+nav ul.slide {
+    transform: translateX(0);
+    z-index: 999;
+}
+/* akhir navbar */
+
+/* home */
+.container-satu {
+    display: flex;
+    width: 100%;
+}
+.container-left {
+    flex: 1.5;
+    background-color: #00587a;
+    font-size: 20px;
+    line-height: 33px;
+    color: #e7e7de;
+    padding: 50px 50px;
+    box-sizing: border-box;
+}
+.button {
+    width: 150px;
+    height: 50px;
+    background-color: #00587a;
+    text-align: center;
+    border: 1px solid white;
+}
+.button a {
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    line-height: 50px;
+}
+.button :hover {
+    background-color: #008891;
+}
+.container-right {
+    flex: 3;
+    background-color: #00587a;
+    font-size: 18px;
+    line-height: 25px;
+    color: #e7e7de;
+    padding: 50px 20px;
+    box-sizing: border-box;
+    text-align: center;
+}
+.container-right img {
+    width: 350px;
+    border-radius: 50%;
+}
+
+/* service */
+.container-dua {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 50px 0;
+    color: #0f3057;
+}
+h2  {
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+}
+.service {
+    width: 32%;
+    box-sizing: border-box;
+    text-align: center;
+}
+.service.ui-ux {
+    margin: 30px 0;
+}
+
+.service.web {
+    margin: 30px 0;
+}
+.service.product {
+    margin: 30px 0;
+}
+
+/* contact info */
+.container-tiga {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 30px 0;
+    background-color: #008891;
+    color: #fff;
+}
+.contact {
+    width: 33%;
+    text-align: center;
+}
+
+/* container-empat */
+footer {
+    background-color: #0f3057;
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* hire_me.html */
+.container-data {
+    background-color: #008891;
+    color: #fff;
+    padding: 40px 200px 90px 200px;
+}
+input {
+    width: 435px;
+    height: 30px;
+}
+.submit input {
+    width: 150px;
+    height: 50px;
+    background-color: #008891;
+    color: #fff;
+    text-align: center;
+    border: 1px solid white;
+}
+.submit :hover {
+    background-color: #00587a;
+    cursor: pointer;
+}
+
+/* ukuran mobile */
+@media screen and (max-width: 576px) {
+    html {
+        margin: 0px 0px;
+    }
+    nav {
+        position: inherit;
+    }
+    .menu-toggle {
+        display: flex;
+        z-index: 9999;
+    }
+    nav ul {
+        position: absolute;
+        right: 0px;
+        top: 0px;
+        height: 100vh;
+        width: 25%;
+        background-color: #0f3057;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        z-index: -1;
+        transform: translateX(100%);
+        transition: all 1s;
+    }
+    .container-satu {
+        flex-wrap: wrap;
+    }
+    .container-right img {
+        width: 300px;
+    }
+    .container-dua {
+        flex-wrap: wrap;
+    }
+    .service.ui-ux {
+        width: 100%;
+    }
+    .service.web {
+        width: 100%;
+    }.container-tiga {
+        flex-wrap: wrap;
+    }
+    .contact {
+        width: 100%;
+    }
+    /* responsive hire_me.html */
+    .container-data {
+        padding: 50px;
+    }
+    input {
+        width: 300px;
+    }
+    textarea {
+        width: 300px;
+    }
+    .submit input {
+        width: 100px;
+        height: 35px;
+    }
+}
